@@ -1,0 +1,1157 @@
+// import com.fasterxml.jackson.databind.ObjectMapper; // version 2.11.1
+// import com.fasterxml.jackson.annotation.JsonProperty; // version 2.11.1
+/* ObjectMapper om = new ObjectMapper();
+Root root = om.readValue(myJsonString, Root.class); */
+public class _7389036026011847430{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7389036111682194181{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7389680659621104390{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7390844801208322821{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7391089355152050976{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7392707135845206790{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7393751145930345222{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7402277262419544838{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7406371983303101189{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7407128094188653318{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7411885626858425094{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7411900400247261957{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7414719286861187846{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7425398140762950421{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7439668092216232759{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7439754921983822600{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class _7439765732758407991{
+    @JsonProperty("Comments")
+    public ArrayList<Comment> comments;
+    @JsonProperty("Questions")
+    public Object questions;
+    @JsonProperty("WatchTime")
+    public String watchTime;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class Activity{
+    @JsonProperty("Favorite Effects")
+    public FavoriteEffects favorite Effects;
+    @JsonProperty("Favorite Hashtags")
+    public FavoriteHashtags favorite Hashtags;
+    @JsonProperty("Favorite Sounds")
+    public FavoriteSounds favorite Sounds;
+    @JsonProperty("Favorite Videos")
+    public FavoriteVideos favorite Videos;
+    @JsonProperty("Follower List")
+    public FollowerList follower List;
+    @JsonProperty("Following List")
+    public FollowingList following List;
+    @JsonProperty("Hashtag")
+    public Hashtag hashtag;
+    @JsonProperty("Like List")
+    public LikeList like List;
+    @JsonProperty("Login History")
+    public LoginHistory login History;
+    @JsonProperty("Purchase History")
+    public PurchaseHistory purchase History;
+    @JsonProperty("Search History")
+    public SearchHistory search History;
+    @JsonProperty("Share History")
+    public ShareHistory share History;
+    @JsonProperty("Status")
+    public Status status;
+    @JsonProperty("Video Browsing History")
+    public VideoBrowsingHistory video Browsing History;
+}
+
+public class AdsAndData{
+    @JsonProperty("Instant Form Ads Responses")
+    public InstantFormAdsResponses instant Form Ads Responses;
+    @JsonProperty("Off TikTok Activity")
+    public OffTikTokActivity off TikTok Activity;
+}
+
+public class AIMoji{
+    @JsonProperty("CreateDate")
+    public String createDate;
+    @JsonProperty("AIMojiList")
+    public Object aIMojiList;
+}
+
+public class AppSettings{
+    @JsonProperty("Block")
+    public Block block;
+    @JsonProperty("Settings")
+    public Settings settings;
+}
+
+public class AutoFill{
+    @JsonProperty("PhoneNumber")
+    public String phoneNumber;
+    @JsonProperty("Email")
+    public String email;
+    @JsonProperty("FirstName")
+    public String firstName;
+    @JsonProperty("LastName")
+    public String lastName;
+    @JsonProperty("Address")
+    public String address;
+    @JsonProperty("ZipCode")
+    public String zipCode;
+    @JsonProperty("Unit")
+    public String unit;
+    @JsonProperty("City")
+    public String city;
+    @JsonProperty("State")
+    public String state;
+    @JsonProperty("Country")
+    public String country;
+}
+
+public class Block{
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("BlockList")
+    public Object blockList;
+}
+
+public class BuyGifts{
+    @JsonProperty("BuyGifts")
+    public Object buyGifts;
+}
+
+public class ChatHistory{
+    @JsonProperty("ChatHistory")
+    public ChatHistory chatHistory;
+}
+
+public class ChatHistory2{
+    @JsonProperty("Chat History with 1.5bobrova:")
+    public ArrayList<ChatHistoryWith15bobrova> chat History with 1.5bobrova:;
+    @JsonProperty("Chat History with _lerka__45:")
+    public ArrayList<ChatHistoryWithLerka45> chat History with _lerka__45:;
+    @JsonProperty("Chat History with anutik_solnca_suda:")
+    public ArrayList<ChatHistoryWithAnutikSolncaSudum> chat History with anutik_solnca_suda:;
+    @JsonProperty("Chat History with arrishhh1:")
+    public ArrayList<ChatHistoryWithArrishhh1> chat History with arrishhh1:;
+    @JsonProperty("Chat History with bforeverk:")
+    public ArrayList<ChatHistoryWithBforeverk> chat History with bforeverk:;
+    @JsonProperty("Chat History with budem_drugiti:")
+    public ArrayList<ChatHistoryWithBudemDrugiti> chat History with budem_drugiti:;
+    @JsonProperty("Chat History with catherine.yakusik:")
+    public ArrayList<ChatHistoryWithCatherineYakusik> chat History with catherine.yakusik:;
+    @JsonProperty("Chat History with centaw:")
+    public ArrayList<ChatHistoryWithCentaw> chat History with centaw:;
+    @JsonProperty("Chat History with crashe_69eb:")
+    public ArrayList<ChatHistoryWithCrashe69eb> chat History with crashe_69eb:;
+    @JsonProperty("Chat History with dashhhhhhhaa_:")
+    public ArrayList<ChatHistoryWithDashhhhhhhaa> chat History with dashhhhhhhaa_:;
+    @JsonProperty("Chat History with diningher:")
+    public ArrayList<ChatHistoryWithDiningher> chat History with diningher:;
+    @JsonProperty("Chat History with dior36758:")
+    public ArrayList<ChatHistoryWithDior36758> chat History with dior36758:;
+    @JsonProperty("Chat History with dnldnldnldnldnl17:")
+    public ArrayList<ChatHistoryWithDnldnldnldnldnl17> chat History with dnldnldnldnldnl17:;
+    @JsonProperty("Chat History with ibicza:")
+    public ArrayList<ChatHistoryWithIbicza> chat History with ibicza:;
+    @JsonProperty("Chat History with id_nika_chan:")
+    public ArrayList<ChatHistoryWithIdNikaChan> chat History with id_nika_chan:;
+    @JsonProperty("Chat History with iddmintr:")
+    public ArrayList<ChatHistoryWithIddmintr> chat History with iddmintr:;
+    @JsonProperty("Chat History with kariiiiiina_:")
+    public ArrayList<ChatHistoryWithKariiiiiina> chat History with kariiiiiina_:;
+    @JsonProperty("Chat History with matofreu:")
+    public ArrayList<ChatHistoryWithMatofreu> chat History with matofreu:;
+    @JsonProperty("Chat History with nastty.t:")
+    public ArrayList<ChatHistoryWithNasttyT> chat History with nastty.t:;
+    @JsonProperty("Chat History with ninat370:")
+    public ArrayList<ChatHistoryWithNinat370> chat History with ninat370:;
+    @JsonProperty("Chat History with oliviezhka:")
+    public ArrayList<ChatHistoryWithOliviezhka> chat History with oliviezhka:;
+    @JsonProperty("Chat History with schizik_men:")
+    public ArrayList<ChatHistoryWithSchizikMan> chat History with schizik_men:;
+    @JsonProperty("Chat History with shuggg01:")
+    public ArrayList<ChatHistoryWithShuggg01> chat History with shuggg01:;
+    @JsonProperty("Chat History with ulvo4ka:")
+    public ArrayList<ChatHistoryWithUlvo4ka> chat History with ulvo4ka:;
+    @JsonProperty("Chat History with user64837640:")
+    public ArrayList<ChatHistoryWithUser64837640> chat History with user64837640:;
+    @JsonProperty("Chat History with whysenes:")
+    public ArrayList<ChatHistoryWithWhysene> chat History with whysenes:;
+    @JsonProperty("Chat History with zenitkaaa:")
+    public ArrayList<ChatHistoryWithZenitkaaa> chat History with zenitkaaa:;
+}
+
+public class ChatHistoryWith15bobrova{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithAnutikSolncaSudum{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithArrishhh1{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithBforeverk{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithBudemDrugiti{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithCatherineYakusik{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithCentaw{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithCrashe69eb{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithDashhhhhhhaa{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithDiningher{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithDior36758{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithDnldnldnldnldnl17{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithIbicza{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithIddmintr{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithIdNikaChan{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithKariiiiiina{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithLerka45{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithMatofreu{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithNasttyT{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithNinat370{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithOliviezhka{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithSchizikMan{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithShuggg01{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithUlvo4ka{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithUser64837640{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithWhysene{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class ChatHistoryWithZenitkaaa{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("From")
+    public String from;
+    @JsonProperty("Content")
+    public String content;
+}
+
+public class Comment{
+    @JsonProperty("Comments")
+    public Comments comments;
+}
+
+public class Comment10{
+    @JsonProperty("CommentTime")
+    public String commentTime;
+    @JsonProperty("CommentContent")
+    public String commentContent;
+    @JsonProperty("RawTime")
+    public int rawTime;
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("CommentsList")
+    public ArrayList<CommentsList> commentsList;
+}
+
+public class CommentsList{
+    public String date;
+    public String comment;
+    public String photo;
+    public String url;
+}
+
+public class CommunicationHistory{
+    @JsonProperty("CommunicationHistories")
+    public Object communicationHistories;
+}
+
+public class ContentPreferences{
+    @JsonProperty("Keyword filters for videos in Following feed")
+    public Object keyword filters for videos in Following feed;
+    @JsonProperty("Keyword filters for videos in For You feed")
+    public Object keyword filters for videos in For You feed;
+    @JsonProperty("Video Languages Preferences")
+    public ArrayList<String> video Languages Preferences;
+}
+
+public class CurrentPaymentInformation{
+    @JsonProperty("PayCard")
+    public Object payCard;
+}
+
+public class CustomerSupportHistory{
+    @JsonProperty("CustomerSupportHistories")
+    public Object customerSupportHistories;
+}
+
+public class DirectMessages{
+    @JsonProperty("Chat History")
+    public ChatHistory chat History;
+}
+
+public class FamilyContentPreferences{
+}
+
+public class FansList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("UserName")
+    public String userName;
+}
+
+public class FavoriteEffects{
+    @JsonProperty("FavoriteEffectsList")
+    public ArrayList<FavoriteEffectsList> favoriteEffectsList;
+}
+
+public class FavoriteEffectsList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("EffectLink")
+    public String effectLink;
+}
+
+public class FavoriteHashtags{
+    @JsonProperty("FavoriteHashtagList")
+    public Object favoriteHashtagList;
+}
+
+public class FavoriteSoundList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class FavoriteSounds{
+    @JsonProperty("FavoriteSoundList")
+    public ArrayList<FavoriteSoundList> favoriteSoundList;
+}
+
+public class FavoriteVideoList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class FavoriteVideos{
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("FavoriteVideoList")
+    public ArrayList<FavoriteVideoList> favoriteVideoList;
+}
+
+public class FollowerList{
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("IsFastLane")
+    public boolean isFastLane;
+    @JsonProperty("FansList")
+    public ArrayList<FansList> fansList;
+}
+
+public class Following{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("UserName")
+    public String userName;
+}
+
+public class FollowingList{
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("IsFastLane")
+    public boolean isFastLane;
+    @JsonProperty("Following")
+    public ArrayList<Following> following;
+}
+
+public class GoLiveHistory{
+    @JsonProperty("GoLiveList")
+    public Object goLiveList;
+}
+
+public class GoLiveSettings{
+    @JsonProperty("SettingsMap")
+    public SettingsMap settingsMap;
+}
+
+public class Hashtag{
+    @JsonProperty("HashtagList")
+    public ArrayList<HashtagList> hashtagList;
+}
+
+public class HashtagList{
+    @JsonProperty("HashtagName")
+    public String hashtagName;
+    @JsonProperty("HashtagLink")
+    public String hashtagLink;
+}
+
+public class IncomePlusWalletTransaction{
+    @JsonProperty("TransactionsList")
+    public Object transactionsList;
+}
+
+public class IncomePlusWalletTransactions{
+    @JsonProperty("Income Plus Wallet Transaction")
+    public IncomePlusWalletTransaction income Plus Wallet Transaction;
+}
+
+public class InstantFormAdsResponses{
+    @JsonProperty("ResponsesList")
+    public Object responsesList;
+}
+
+public class LikeList{
+}
+
+public class LoginHistory{
+    @JsonProperty("LoginHistoryList")
+    public ArrayList<LoginHistoryList> loginHistoryList;
+}
+
+public class LoginHistoryList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("IP")
+    public String iP;
+    @JsonProperty("DeviceModel")
+    public String deviceModel;
+    @JsonProperty("DeviceSystem")
+    public String deviceSystem;
+    @JsonProperty("NetworkType")
+    public String networkType;
+    @JsonProperty("Carrier")
+    public String carrier;
+}
+
+public class OffTikTokActivity{
+    @JsonProperty("OffTikTokActivityDataList")
+    public ArrayList<OffTikTokActivityDataList> offTikTokActivityDataList;
+}
+
+public class OffTikTokActivityDataList{
+    @JsonProperty("TimeStamp")
+    public String timeStamp;
+    @JsonProperty("Source")
+    public String source;
+    @JsonProperty("Event")
+    public String event;
+}
+
+public class OrderDisputeHistory{
+    @JsonProperty("OrderDisputeHistories")
+    public Object orderDisputeHistories;
+}
+
+public class OrderHistory{
+    @JsonProperty("OrderHistories")
+    public Object orderHistories;
+}
+
+public class PoiReview{
+    @JsonProperty("POI Review")
+    public POIReview pOI Review;
+}
+
+public class POIReview2{
+    @JsonProperty("ReviewsList")
+    public Object reviewsList;
+}
+
+public class ProductBrowsingHistory{
+    @JsonProperty("ProductBrowsingHistories")
+    public Object productBrowsingHistories;
+}
+
+public class ProductReviewHistory{
+    @JsonProperty("ProductReviewHistories")
+    public Object productReviewHistories;
+}
+
+public class Profile{
+    @JsonProperty("AIMoji")
+    public AIMoji aIMoji;
+    @JsonProperty("Auto Fill")
+    public AutoFill auto Fill;
+    @JsonProperty("Profile Information")
+    public ProfileInformation profile Information;
+}
+
+public class ProfileInformation{
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("ProfileMap")
+    public ProfileMap profileMap;
+}
+
+public class ProfileMap{
+    @JsonProperty("PlatformInfo")
+    public ArrayList<Object> platformInfo;
+    public String bioDescription;
+    public String birthDate;
+    public String emailAddress;
+    public String likesReceived;
+    public String profilePhoto;
+    public String profileVideo;
+    public String telephoneNumber;
+    public String userName;
+}
+
+public class PurchaseHistory{
+    @JsonProperty("SendGifts")
+    public SendGifts sendGifts;
+    @JsonProperty("BuyGifts")
+    public BuyGifts buyGifts;
+}
+
+public class PushNotification{
+    @JsonProperty("Desktop notification")
+    public String desktop notification;
+    @JsonProperty("New Comments on My Video")
+    public String new Comments on My Video;
+    @JsonProperty("New Fans")
+    public String new Fans;
+    @JsonProperty("New Likes on My Video")
+    public String new Likes on My Video;
+}
+
+public class RecentlyDeletedPosts{
+    @JsonProperty("PostList")
+    public Object postList;
+}
+
+public class ReturnAndRefundHistory{
+    @JsonProperty("ReturnAndRefundHistories")
+    public Object returnAndRefundHistories;
+}
+
+public class Root{
+    @JsonProperty("Activity")
+    public Activity activity;
+    @JsonProperty("Ads and data")
+    public AdsAndData ads and data;
+    @JsonProperty("App Settings")
+    public AppSettings app Settings;
+    @JsonProperty("Comment")
+    public Comment comment;
+    @JsonProperty("Direct Messages")
+    public DirectMessages direct Messages;
+    @JsonProperty("Income Plus Wallet Transactions")
+    public IncomePlusWalletTransactions income Plus Wallet Transactions;
+    @JsonProperty("Poi Review")
+    public PoiReview poi Review;
+    @JsonProperty("Profile")
+    public Profile profile;
+    @JsonProperty("Tiktok Live")
+    public TiktokLive tiktok Live;
+    @JsonProperty("Tiktok Shopping")
+    public TiktokShopping tiktok Shopping;
+    @JsonProperty("Video")
+    public Video video;
+}
+
+public class SavedAddressInformation{
+    @JsonProperty("SavedAddress")
+    public Object savedAddress;
+}
+
+public class SearchHistory{
+    @JsonProperty("SearchList")
+    public ArrayList<SearchList> searchList;
+}
+
+public class SearchList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("SearchTerm")
+    public String searchTerm;
+}
+
+public class SendGifts{
+    @JsonProperty("SendGifts")
+    public Object sendGifts;
+}
+
+public class Settings{
+    @JsonProperty("App")
+    public int app;
+    @JsonProperty("SettingsMap")
+    public SettingsMap settingsMap;
+}
+
+public class SettingsMap{
+    @JsonProperty("Allow DownLoad")
+    public String allow DownLoad;
+    @JsonProperty("Allow Others to Find Me")
+    public String allow Others to Find Me;
+    @JsonProperty("App Language")
+    public String app Language;
+    @JsonProperty("Content Preferences")
+    public ContentPreferences content Preferences;
+    @JsonProperty("Family Content Preferences")
+    public FamilyContentPreferences family Content Preferences;
+    @JsonProperty("Filter Comments")
+    public String filter Comments;
+    @JsonProperty("Interests")
+    public String interests;
+    @JsonProperty("Personalized Ads")
+    public String personalized Ads;
+    @JsonProperty("Private Account")
+    public String private Account;
+    @JsonProperty("Push Notification")
+    public PushNotification push Notification;
+    @JsonProperty("Suggest your account to Facebook friends")
+    public String suggest your account to Facebook friends;
+    @JsonProperty("Suggest your account to contacts")
+    public String suggest your account to contacts;
+    @JsonProperty("Suggest your account to people who open or send links to you")
+    public String suggest your account to people who open or send links to you;
+    @JsonProperty("Web Language")
+    public String web Language;
+    @JsonProperty("Who Can Duet With Me")
+    public String who Can Duet With Me;
+    @JsonProperty("Who Can Post Comments")
+    public String who Can Post Comments;
+    @JsonProperty("Who Can Send Me Message")
+    public String who Can Send Me Message;
+    @JsonProperty("Who Can Stitch with your videos")
+    public String who Can Stitch with your videos;
+    @JsonProperty("Who Can View Videos I Liked")
+    public String who Can View Videos I Liked;
+    @JsonProperty("Allow agencies to find and invite you")
+    public String allow agencies to find and invite you;
+    @JsonProperty("Allow others to invite you to co-host in LIVE")
+    public String allow others to invite you to co-host in LIVE;
+    @JsonProperty("Allow people to send and receive comments during your LIVE")
+    public String allow people to send and receive comments during your LIVE;
+    @JsonProperty("Allow suggested LIVE hosts to invite you to co-host in LIVE")
+    public String allow suggested LIVE hosts to invite you to co-host in LIVE;
+    @JsonProperty("Allow viewers to request to go LIVE with you")
+    public String allow viewers to request to go LIVE with you;
+    @JsonProperty("Allow viewers to see and send questions and answers in your LIVE")
+    public String allow viewers to see and send questions and answers in your LIVE;
+    @JsonProperty("Allow viewers to send you gifts during your LIVE")
+    public String allow viewers to send you gifts during your LIVE;
+    @JsonProperty("Hide comments that contain the following keywords from your LIVE")
+    public ArrayList<Object> hide comments that contain the following keywords from your LIVE;
+    @JsonProperty("Hide potential spam or offensive comments from your LIVE")
+    public String hide potential spam or offensive comments from your LIVE;
+    @JsonProperty("People you assigned to moderate your LIVE")
+    public ArrayList<Object> people you assigned to moderate your LIVE;
+    @JsonProperty("Show your username and gift information in features with ranking lists")
+    public String show your username and gift information in features with ranking lists;
+}
+
+public class ShareHistory{
+    @JsonProperty("ShareHistoryList")
+    public ArrayList<ShareHistoryList> shareHistoryList;
+}
+
+public class ShareHistoryList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("SharedContent")
+    public String sharedContent;
+    @JsonProperty("Link")
+    public String link;
+    @JsonProperty("Method")
+    public String method;
+}
+
+public class ShoppingCartList{
+    @JsonProperty("ShoppingCart")
+    public Object shoppingCart;
+}
+
+public class Status{
+    @JsonProperty("Status List")
+    public ArrayList<StatusList> status List;
+}
+
+public class StatusList{
+    @JsonProperty("Resolution")
+    public String resolution;
+    @JsonProperty("App Version")
+    public String app Version;
+    @JsonProperty("IDFA")
+    public String iDFA;
+    @JsonProperty("GAID")
+    public String gAID;
+    @JsonProperty("Android ID")
+    public String android ID;
+    @JsonProperty("IDFV")
+    public String iDFV;
+    @JsonProperty("Web ID")
+    public String web ID;
+}
+
+public class TiktokLive{
+    @JsonProperty("Go Live History")
+    public GoLiveHistory go Live History;
+    @JsonProperty("Go Live Settings")
+    public GoLiveSettings go Live Settings;
+    @JsonProperty("Watch Live History")
+    public WatchLiveHistory watch Live History;
+    @JsonProperty("Watch Live Settings")
+    public WatchLiveSettings watch Live Settings;
+}
+
+public class TiktokShopping{
+    @JsonProperty("Communication History")
+    public CommunicationHistory communication History;
+    @JsonProperty("Current Payment Information")
+    public CurrentPaymentInformation current Payment Information;
+    @JsonProperty("Customer Support History")
+    public CustomerSupportHistory customer Support History;
+    @JsonProperty("Order Dispute History")
+    public OrderDisputeHistory order Dispute History;
+    @JsonProperty("Order History")
+    public OrderHistory order History;
+    @JsonProperty("Product Browsing History")
+    public ProductBrowsingHistory product Browsing History;
+    @JsonProperty("Product Review History")
+    public ProductReviewHistory product Review History;
+    @JsonProperty("Return and Refund History")
+    public ReturnAndRefundHistory return and Refund History;
+    @JsonProperty("Saved Address Information")
+    public SavedAddressInformation saved Address Information;
+    @JsonProperty("Shopping Cart List")
+    public ShoppingCartList shopping Cart List;
+    @JsonProperty("Vouchers")
+    public Vouchers vouchers;
+}
+
+public class Video{
+    @JsonProperty("RecentlyDeletedPosts")
+    public RecentlyDeletedPosts recentlyDeletedPosts;
+    @JsonProperty("Videos")
+    public Videos videos;
+}
+
+public class VideoBrowsingHistory{
+    @JsonProperty("VideoList")
+    public ArrayList<VideoList> videoList;
+}
+
+public class VideoList{
+    @JsonProperty("Date")
+    public String date;
+    @JsonProperty("Link")
+    public String link;
+}
+
+public class Videos{
+    @JsonProperty("VideoList")
+    public Object videoList;
+}
+
+public class Vouchers{
+    @JsonProperty("Vouchers")
+    public Object vouchers;
+}
+
+public class WatchLiveHistory{
+    @JsonProperty("WatchLiveMap")
+    public WatchLiveMap watchLiveMap;
+}
+
+public class WatchLiveMap{
+    @JsonProperty("7389036026011847430")
+    public _7389036026011847430 _7389036026011847430;
+    @JsonProperty("7389036111682194181")
+    public _7389036111682194181 _7389036111682194181;
+    @JsonProperty("7389680659621104390")
+    public _7389680659621104390 _7389680659621104390;
+    @JsonProperty("7390844801208322821")
+    public _7390844801208322821 _7390844801208322821;
+    @JsonProperty("7391089355152050976")
+    public _7391089355152050976 _7391089355152050976;
+    @JsonProperty("7392707135845206790")
+    public _7392707135845206790 _7392707135845206790;
+    @JsonProperty("7393751145930345222")
+    public _7393751145930345222 _7393751145930345222;
+    @JsonProperty("7402277262419544838")
+    public _7402277262419544838 _7402277262419544838;
+    @JsonProperty("7406371983303101189")
+    public _7406371983303101189 _7406371983303101189;
+    @JsonProperty("7407128094188653318")
+    public _7407128094188653318 _7407128094188653318;
+    @JsonProperty("7411885626858425094")
+    public _7411885626858425094 _7411885626858425094;
+    @JsonProperty("7411900400247261957")
+    public _7411900400247261957 _7411900400247261957;
+    @JsonProperty("7414719286861187846")
+    public _7414719286861187846 _7414719286861187846;
+    @JsonProperty("7425398140762950421")
+    public _7425398140762950421 _7425398140762950421;
+    @JsonProperty("7439668092216232759")
+    public _7439668092216232759 _7439668092216232759;
+    @JsonProperty("7439754921983822600")
+    public _7439754921983822600 _7439754921983822600;
+    @JsonProperty("7439765732758407991")
+    public _7439765732758407991 _7439765732758407991;
+}
+
+public class WatchLiveSettings{
+    @JsonProperty("WatchLiveSettingsMap")
+    public WatchLiveSettingsMap watchLiveSettingsMap;
+    @JsonProperty("MostRecentModificationTimeInApp")
+    public String mostRecentModificationTimeInApp;
+    @JsonProperty("MostRecentModificationTimeInWeb")
+    public String mostRecentModificationTimeInWeb;
+}
+
+public class WatchLiveSettingsMap{
+    public String app;
+    public String web;
+}
+
