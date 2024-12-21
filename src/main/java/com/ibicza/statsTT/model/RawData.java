@@ -18,8 +18,6 @@ public class RawData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String source; // Источник данных, например, "TikTok"
-
     @Lob
     private String jsonContent; // Исходный JSON-файл (хранится как текст)
 

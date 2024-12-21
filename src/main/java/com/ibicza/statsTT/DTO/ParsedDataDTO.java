@@ -1,5 +1,6 @@
 package com.ibicza.statsTT.DTO;
 
+import com.ibicza.statsTT.model.ParsedData;
 import lombok.Data;
 
 
@@ -117,5 +118,26 @@ public class ParsedDataDTO {
 
     public void setCommentsWrite(ArrayList<String> commentsWrite) {
         this.commentsWrite = commentsWrite;
+    }
+
+    public ParsedData toParsedData(){
+        ParsedData parsedData = new ParsedData();
+
+        parsedData.setUsername(this.username);
+        parsedData.setCountVideosWatched(this.countVideosWatched);
+        parsedData.setCountVideoLiked(this.countVideoLiked);
+        parsedData.setCountVideoShared(this.countVideoShared);
+        parsedData.setCountFriendsVideosLiked(this.countFriendsVideosLiked);
+        parsedData.setCountComments(this.countComments);
+        parsedData.setCountUsedHashtags(this.countUsedHashtags);
+        parsedData.setCountLivesWatched(this.countLivesWatched);
+        parsedData.setMostUsedEmojis(this.mostUsedEmojis);
+
+        // Преобразуем списки в строки, разделённые запятыми
+        parsedData.setUsedHashTags(this.usedHashTags != null ? String.join(",", this.usedHashTags) : null);
+        parsedData.setShearList(this.shearList != null ? String.join(",", this.shearList) : null);
+        parsedData.setCommentsWrite(this.commentsWrite != null ? String.join(",", this.commentsWrite) : null);
+
+        return parsedData;
     }
 }

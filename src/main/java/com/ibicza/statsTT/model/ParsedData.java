@@ -1,7 +1,11 @@
 package com.ibicza.statsTT.model;
 
+import com.ibicza.statsTT.DTO.ParsedDataDTO;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "parsed_data")
@@ -138,4 +142,27 @@ public class ParsedData {
     public void setCommentsWrite(String commentsWrite) {
         this.commentsWrite = commentsWrite;
     }
+
+    public ParsedDataDTO toParsedDataDTO() {
+        ParsedDataDTO dto = new ParsedDataDTO();
+
+        dto.setUsername(this.username);
+        dto.setCountVideosWatched(this.countVideosWatched);
+        dto.setCountVideoLiked(this.countVideoLiked);
+        dto.setCountVideoShared(this.countVideoShared);
+        dto.setCountFriendsVideosLiked(this.countFriendsVideosLiked);
+        dto.setCountComments(this.countComments);
+        dto.setCountUsedHashtags(this.countUsedHashtags);
+        dto.setCountLivesWatched(this.countLivesWatched);
+        dto.setMostUsedEmojis(this.mostUsedEmojis);
+
+        // Преобразуем строки в списки
+        dto.setUsedHashTags(this.usedHashTags != null ? new ArrayList<>(List.of(this.usedHashTags.split(","))) : null);
+        dto.setShearList(this.shearList != null ? new ArrayList<>(List.of(this.shearList.split(","))) : null);
+        dto.setCommentsWrite(this.commentsWrite != null ? new ArrayList<>(List.of(this.commentsWrite.split(","))) : null);
+
+        return dto;
+    }
+
+
 }

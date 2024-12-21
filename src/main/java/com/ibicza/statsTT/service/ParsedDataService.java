@@ -1,5 +1,6 @@
 package com.ibicza.statsTT.service;
 
+import com.ibicza.statsTT.DTO.ParsedDataDTO;
 import com.ibicza.statsTT.model.ParsedData;
 import com.ibicza.statsTT.repository.ParsedDataRepository;
 import org.springframework.stereotype.Service;
@@ -26,4 +27,5 @@ public class ParsedDataService {
     public ParsedData getParsedDataById(Long id) {
         return parsedDataRepository.findById(id).orElse(null);
     }
+
 }
