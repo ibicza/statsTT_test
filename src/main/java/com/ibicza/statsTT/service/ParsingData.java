@@ -2,24 +2,25 @@ package com.ibicza.statsTT.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.ibicza.statsTT.DTO.ParsedDataDTO;
 import com.ibicza.statsTT.DTO.ttjson.*;
-
+import org.springframework.stereotype.Service;
 
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+@Service
 public class ParsingData {
 
-    public static RootNode jsonStringToObject(String json) {
+    private final ObjectMapper objectMapper;
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.registerModule(new JavaTimeModule()); // Регистрация модуля для поддержки java.time
+    public ParsingData(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 
+    public RootNode jsonStringToObject(String json) {
         try {
             return objectMapper.readValue(json, RootNode.class);
 
@@ -28,7 +29,7 @@ public class ParsingData {
         }
     }
 
-    public static ParsedDataDTO getParsedDataDTO(RootNode rootNodeObj) {
+    public ParsedDataDTO getParsedDataDTO(RootNode rootNodeObj) {
 
         ParsedDataDTO parsedDataDTO = new ParsedDataDTO();
 

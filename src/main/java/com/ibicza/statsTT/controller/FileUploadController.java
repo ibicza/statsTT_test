@@ -23,10 +23,12 @@ public class FileUploadController {
 
     private final RawDataService rawDataService;
     private final ParsedDataService parsedDataService;
+    private final ParsingData parsingData;
 
-    public FileUploadController(RawDataService rawDataService, ParsedDataService parsedDataService) {
+    public FileUploadController(RawDataService rawDataService, ParsedDataService parsedDataService, ParsingData parsingData) {
         this.rawDataService = rawDataService;
         this.parsedDataService = parsedDataService;
+        this.parsingData = parsingData;
     }
 
     private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
@@ -49,7 +51,7 @@ public class FileUploadController {
             rawDataService.saveRawDataAsync(rawData);
 
             // Парсим JSON, преобразуем в ParsedDataDTO и сохраняем
-            ParsedDataDTO parsedDataDTO = ParsingData.getParsedDataDTO(ParsingData.jsonStringToObject(jsonString));
+            ParsedDataDTO parsedDataDTO = parsingData.getParsedDataDTO(parsingData.jsonStringToObject(jsonString));
             parsedDataService.saveParsedData(parsedDataDTO.toParsedData());
 
             logger.info("File successfully processed");
