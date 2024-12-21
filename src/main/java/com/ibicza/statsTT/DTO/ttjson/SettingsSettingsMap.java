@@ -7,7 +7,7 @@ public class SettingsSettingsMap {
     private String allowOthersToFindMe;
     private String appLanguage;
     private ContentPreferences contentPreferences;
-    private LikeList familyContentPreferences;
+    private Object familyContentPreferences;
     private String filterComments;
     private String interests;
     private String personalizedAds;
@@ -44,9 +44,9 @@ public class SettingsSettingsMap {
     public void setContentPreferences(ContentPreferences value) { this.contentPreferences = value; }
 
     @JsonProperty("Family Content Preferences")
-    public LikeList getFamilyContentPreferences() { return familyContentPreferences; }
+    public Object getFamilyContentPreferences() { return familyContentPreferences; }
     @JsonProperty("Family Content Preferences")
-    public void setFamilyContentPreferences(LikeList value) { this.familyContentPreferences = value; }
+    public void setFamilyContentPreferences(Object value) { this.familyContentPreferences = value; }
 
     @JsonProperty("Filter Comments")
     public String getFilterComments() { return filterComments; }

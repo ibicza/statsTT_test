@@ -46,13 +46,13 @@ public class FileUploadController {
             RawData rawData = new RawData();
             rawData.setJsonContent(jsonString);
             rawData.setReceivedAt(LocalDateTime.now());
-            rawDataService.saveRawData(rawData);
+            rawDataService.saveRawDataAsync(rawData);
 
             // Парсим JSON, преобразуем в ParsedDataDTO и сохраняем
             ParsedDataDTO parsedDataDTO = ParsingData.getParsedDataDTO(ParsingData.jsonStringToObject(jsonString));
             parsedDataService.saveParsedData(parsedDataDTO.toParsedData());
 
-            logger.info("File successfully processed and data saved");
+            logger.info("File successfully processed");
             return ResponseEntity.ok(parsedDataDTO);
 
         } catch (IOException e) {

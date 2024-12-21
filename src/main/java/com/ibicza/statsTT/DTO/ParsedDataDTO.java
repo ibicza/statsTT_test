@@ -18,6 +18,7 @@ public class ParsedDataDTO {
     private int countComments;
     private int countUsedHashtags;
     private int countLivesWatched;
+    private int countLoginHistory;
 
     private String mostUsedEmojis;
     private ArrayList<String> usedHashTags;
@@ -88,6 +89,14 @@ public class ParsedDataDTO {
         this.countLivesWatched = countLivesWatched;
     }
 
+    public int getCountLoginHistory() {
+        return countLoginHistory;
+    }
+
+    public void setCountLoginHistory(int countLoginHistory) {
+        this.countLoginHistory = countLoginHistory;
+    }
+
     public String getMostUsedEmojis() {
         return mostUsedEmojis;
     }
@@ -132,6 +141,7 @@ public class ParsedDataDTO {
         parsedData.setCountUsedHashtags(this.countUsedHashtags);
         parsedData.setCountLivesWatched(this.countLivesWatched);
         parsedData.setMostUsedEmojis(this.mostUsedEmojis);
+        parsedData.setCountLoginHistory(this.countLoginHistory);
 
         // Преобразуем списки в строки, разделённые запятыми
         parsedData.setUsedHashTags(this.usedHashTags != null ? String.join(",", this.usedHashTags) : null);

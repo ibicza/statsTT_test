@@ -7,6 +7,7 @@ import com.ibicza.statsTT.DTO.ParsedDataDTO;
 import com.ibicza.statsTT.DTO.ttjson.*;
 
 
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,6 +22,7 @@ public class ParsingData {
 
         try {
             return objectMapper.readValue(json, RootNode.class);
+
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
@@ -32,17 +34,31 @@ public class ParsingData {
 
         parsedDataDTO.setUsername(rootNodeObj.getProfile().getProfileInformation().getProfileMap().getUserName());
         parsedDataDTO.setCountVideosWatched(rootNodeObj.getActivity().getVideoBrowsingHistory().getVideoList().size());
-        parsedDataDTO.setCountFriendsVideosLiked(rootNodeObj.getActivity().getFavoriteVideos().getFavoriteVideoList().size());
-        parsedDataDTO.setCountVideoShared(rootNodeObj.getActivity().getShareHistory().getShareHistoryList().size());
+        parsedDataDTO.setCountVideoLiked(rootNodeObj.getActivity().getFavoriteVideos().getFavoriteVideoList().size());
         parsedDataDTO.setCountFriendsVideosLiked(rootNodeObj.getActivity().getLikeList().getItemFavoriteList().size());
+        parsedDataDTO.setCountVideoShared(rootNodeObj.getActivity().getShareHistory().getShareHistoryList().size());
         parsedDataDTO.setCountComments(rootNodeObj.getComment().getComments().getCommentsList().size());
         parsedDataDTO.setCountUsedHashtags(rootNodeObj.getActivity().getHashtag().getHashtagList().size());
         parsedDataDTO.setCountLivesWatched(rootNodeObj.getTiktokLive().getWatchLiveHistory().getWatchLiveMap().size());
+        parsedDataDTO.setCountLoginHistory(rootNodeObj.getActivity().getLoginHistory().getLoginHistoryList().size());
 
         parsedDataDTO.setMostUsedEmojis(getTopEmojisAsString(getEmojiCountMap(rootNodeObj)));
-        parsedDataDTO.setUsedHashTags((ArrayList<String>) rootNodeObj.getActivity().getHashtag().getHashtagList().stream().map(HashtagList::getHashtagName).toList());
-        parsedDataDTO.setShearList((ArrayList<String>) rootNodeObj.getActivity().getSearchHistory().getSearchList().stream().map(SearchList::getSearchTerm).toList());
-        parsedDataDTO.setCommentsWrite((ArrayList<String>) rootNodeObj.getComment().getComments().getCommentsList().stream().map(CommentsList::getComment).toList());
+        // Создание изменяемых коллекций
+        parsedDataDTO.setUsedHashTags(new ArrayList<>(
+                rootNodeObj.getActivity().getHashtag().getHashtagList().stream()
+                        .map(HashtagList::getHashtagName)
+                        .toList()
+        ));
+        parsedDataDTO.setShearList(new ArrayList<>(
+                rootNodeObj.getActivity().getSearchHistory().getSearchList().stream()
+                        .map(SearchList::getSearchTerm)
+                        .toList()
+        ));
+        parsedDataDTO.setCommentsWrite(new ArrayList<>(
+                rootNodeObj.getComment().getComments().getCommentsList().stream()
+                        .map(CommentsList::getComment)
+                        .toList()
+        ));
 
         return parsedDataDTO;
     }

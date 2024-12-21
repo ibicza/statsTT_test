@@ -2,9 +2,8 @@ package com.ibicza.statsTT.DTO.ttjson;
 
 import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
-import lombok.Getter;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -16,7 +15,8 @@ public class LikeList {
     private Integer app;
 
     @JsonProperty("ItemFavoriteList")
-    public List<ItemFavorite> itemFavoriteList = new ArrayList<>();
+    private List<ItemFavorite> itemFavoriteList = new ArrayList<>();
+
 
     public Integer getApp() {
         return app;
@@ -27,7 +27,7 @@ public class LikeList {
     }
 
     public List<ItemFavorite> getItemFavoriteList() {
-        return itemFavoriteList;
+        return itemFavoriteList != null ? itemFavoriteList : Collections.emptyList();
     }
 
     public void setItemFavoriteList(List<ItemFavorite> itemFavoriteList) {

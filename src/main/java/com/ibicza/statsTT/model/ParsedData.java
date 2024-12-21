@@ -27,6 +27,7 @@ public class ParsedData {
     private int countComments;
     private int countUsedHashtags;
     private int countLivesWatched;
+    private int countLoginHistory;
 
     private String mostUsedEmojis;
 
@@ -111,6 +112,14 @@ public class ParsedData {
         this.countLivesWatched = countLivesWatched;
     }
 
+    public int getCountLoginHistory() {
+        return countLoginHistory;
+    }
+
+    public void setCountLoginHistory(int countLoginHistory) {
+        this.countLoginHistory = countLoginHistory;
+    }
+
     public String getMostUsedEmojis() {
         return mostUsedEmojis;
     }
@@ -155,6 +164,7 @@ public class ParsedData {
         dto.setCountUsedHashtags(this.countUsedHashtags);
         dto.setCountLivesWatched(this.countLivesWatched);
         dto.setMostUsedEmojis(this.mostUsedEmojis);
+        dto.setCountLoginHistory(this.countLoginHistory);
 
         // Преобразуем строки в списки
         dto.setUsedHashTags(this.usedHashTags != null ? new ArrayList<>(List.of(this.usedHashTags.split(","))) : null);
