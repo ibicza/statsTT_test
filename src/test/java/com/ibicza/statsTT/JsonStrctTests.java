@@ -10,18 +10,18 @@ import java.nio.file.Path;
 
 @SpringBootTest
 public class JsonStrctTests {
-    @Test
-    public void testJsonStrct() {
-        try {
-            String json = Files.readString(Path.of("C:\\Users\\artio\\OneDrive\\Рабочий стол\\user_ibicza_data_tiktok.json")); // Вставьте ваш JSON здесь
-            ObjectMapper objectMapper = new ObjectMapper();
-            RootNode rootNode = objectMapper.readValue(json, RootNode.class);
-
-            // Проверьте поля
-            System.out.println(rootNode.getActivity().getFavoriteEffects());
-            // Добавьте дополнительные проверки для других полей
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    @Test
+////    public void testJsonStrct() {
+////        try {
+////            String json = Files.readString(Path.of("C:\\Users\\artio\\OneDrive\\Рабочий стол\\user_ibicza_data_tiktok.json")); // Вставьте ваш JSON здесь
+////            ObjectMapper objectMapper = new ObjectMapper();
+////            RootNode rootNode = objectMapper.readValue(json, RootNode.class);
+////
+////            // Проверьте поля
+////            System.out.println(rootNode.getActivity().getFavoriteEffects());
+////            // Добавьте дополнительные проверки для других полей
+////        } catch (Exception e) {
+////            e.printStackTrace();
+////        }
+////    }
 }

@@ -5,6 +5,10 @@ import com.ibicza.statsTT.repository.ParsedDataRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 @Component
 public class TestDataInitializer implements CommandLineRunner {
 
@@ -16,10 +20,18 @@ public class TestDataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://postgres:5432/tiktokparse", "postgres", "admin")) {
+            System.out.println("Connected to PostgreSQL!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         ParsedData data = new ParsedData();
         data.setUsername("test_user");
         data.setCommentsWrite("");
-        data.setCountComments(1);
+        data.setCountComments(5000);
         data.setCountFriendsVideosLiked(1);
         data.setCountLivesWatched(1);
         data.setCountUsedHashtags(1);
@@ -32,6 +44,9 @@ public class TestDataInitializer implements CommandLineRunner {
         data.setMostUsedEmojis("fghjkl");
         parsedDataRepository.save(data);
         System.out.println("Test data saved!");
+        System.out.println("Test!" + parsedDataRepository.findById(0L));
+        System.out.println("Test!" + parsedDataRepository.findById(1L));
+        System.out.println("Test!" + parsedDataRepository.findById(2L));
     }
 }
 
