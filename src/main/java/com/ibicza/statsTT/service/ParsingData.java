@@ -64,7 +64,7 @@ public class ParsingData {
         return parsedDataDTO;
     }
 
-    private static String getTopEmojisAsString(Map<String, Integer> emojiCountMap) {
+    private String getTopEmojisAsString(Map<String, Integer> emojiCountMap) {
         StringBuilder result = new StringBuilder();
 
         // Сортируем и выбираем топ-5 эмодзи
@@ -81,7 +81,7 @@ public class ParsingData {
         return result.toString();
     }
 
-    private static Map<String, Integer> getEmojiCountMap(RootNode rootNodeObj) {
+    private Map<String, Integer> getEmojiCountMap(RootNode rootNodeObj) {
 
         Map<String, Integer> emojiCountMap = new HashMap<>();
 
