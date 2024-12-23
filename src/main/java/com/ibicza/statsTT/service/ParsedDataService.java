@@ -1,7 +1,6 @@
 package com.ibicza.statsTT.service;
 
 import com.ibicza.statsTT.DTO.ParsedDataDTO;
-import com.ibicza.statsTT.DTO.ttjson.RootNode;
 import com.ibicza.statsTT.model.ParsedData;
 import com.ibicza.statsTT.model.RawData;
 import com.ibicza.statsTT.repository.ParsedDataRepository;

@@ -1,6 +1,5 @@
 package com.ibicza.statsTT.service;
 
-import com.ibicza.statsTT.controller.FileUploadController;
 import com.ibicza.statsTT.model.RawData;
 import com.ibicza.statsTT.repository.RawDataRepository;
 
@@ -26,18 +25,18 @@ public class RawDataService {
         return rawDataRepository.findAll();
     }
 
-    public RawData saveRawData(RawData rawData) {
-        return rawDataRepository.save(rawData);
+    public void saveRawData(RawData rawData) {
+        rawDataRepository.save(rawData);
     }
 
     @Async
-    public CompletableFuture<Void> saveRawDataAsync(RawData rawData) {
+    public void saveRawDataAsync(RawData rawData) {
         try {
             saveRawData(rawData);
         } catch (Exception e) {
             logger.error("Error saving raw data asynchronously: {}", e.getMessage());
         }
-        return CompletableFuture.completedFuture(null);
+        CompletableFuture.completedFuture(null);
     }
 
 
