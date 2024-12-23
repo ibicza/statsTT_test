@@ -31,25 +31,25 @@ public class TestDataInitializer implements CommandLineRunner {
         }
 
 
-        ParsedData data = new ParsedData();
-        data.setUsername("test_user");
-        data.setCommentsWrite("");
-        data.setCountComments(5000);
-        data.setCountFriendsVideosLiked(1);
-        data.setCountLivesWatched(1);
-        data.setCountUsedHashtags(1);
-        data.setCountVideoLiked(1);
-        data.setCountVideoShared(1);
-        data.setCountVideosWatched(1);
-        data.setShearList("1");
-        data.setUsedHashTags("1");
-        data.setCommentsWrite("tfcghj");
-        data.setMostUsedEmojis("fghjkl");
-        parsedDataRepository.save(data);
-        System.out.println("Test data saved!");
-        System.out.println("Test!" + parsedDataRepository.findById(0L));
-        System.out.println("Test!" + parsedDataRepository.findById(1L));
-        System.out.println("Test!" + parsedDataRepository.findById(2L));
+//        ParsedData data = new ParsedData();
+//        data.setUsername("test_user");
+//        data.setCommentsWrite("");
+//        data.setCountComments(5000);
+//        data.setCountFriendsVideosLiked(1);
+//        data.setCountLivesWatched(1);
+//        data.setCountUsedHashtags(1);
+//        data.setCountVideoLiked(1);
+//        data.setCountVideoShared(1);
+//        data.setCountVideosWatched(1);
+//        data.setShearList("1");
+//        data.setUsedHashTags("1");
+//        data.setCommentsWrite("tfcghj");
+//        data.setMostUsedEmojis("fghjkl");
+//        parsedDataRepository.save(data);
+//        System.out.println("Test data saved!");
+//        System.out.println("Test!" + parsedDataRepository.findById(0L));
+//        System.out.println("Test!" + parsedDataRepository.findById(1L));
+//        System.out.println("Test!" + parsedDataRepository.findById(2L));
 
 
 //        System.out.println(ParsingData.getParsedDataDTO(

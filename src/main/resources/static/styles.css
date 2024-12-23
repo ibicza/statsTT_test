@@ -1,0 +1,395 @@
+/* Общие стили для страницы */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("BackFromKristina.png");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Header */
+.header {
+    background-color: #fff4db;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #222;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Стиль кнопки загрузки */
+.upload-section {
+    margin: 20px;
+    text-align: center;
+}
+
+.upload-section button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-section button:hover {
+    background-color: #555;
+}
+
+#progressContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#progressOuter {
+    width: 250px;
+    max-width: 400px;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+#progressInner {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    font-size: 14px;
+    color: #333;
+}
+
+
+.instructions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.instruction {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.instruction img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.instruction p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+
+
+.stats-page {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #e18a07;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stats-header h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+#backButton {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#backButton:hover {
+    background-color: #151868;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 200px; /* Высота карточки фиксирована */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.stat-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    margin: 0;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.stat-card h3 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.stat-card:nth-child(odd) {
+    background: linear-gradient(145deg, #29802d, #f0c45c);
+}
+
+.stat-card:nth-child(even) {
+    background: linear-gradient(145deg, #5e1a9a, #66ace6);
+}
+
+.stat-card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.final-text {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #008373;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 95.6%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.final-text h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.final-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+    word-wrap: break-word;
+}
+
+.final-text .stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.final-text .stats-list li {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.final-text .stats-list li span {
+    font-weight: bold;
+}
+
+.final-text button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.final-text button:hover {
+    background-color: #45a049;
+}
+
+.final-text button:focus {
+    outline: none;
+}
+
+/* Стили для модальных окон */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 80vh; /* Ограничиваем высоту окна */
+}
+
+.modal-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#commentsList, #searchHistoryList, #searchUsedHashtagsList {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+    padding: 10px 0;
+}
+
+#commentsList p, #searchHistoryList p , #searchUsedHashtagsList{
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#commentsList p:last-child, #searchHistoryList p:last-child, #searchUsedHashtagsList p:last-child {
+    border-bottom: none;
+}
+
+/* Прокручиваемый список для модальных окон */
+.scrollable-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 15px; /* Для скролла */
+}
+
+/* Кнопка закрытия для модальных окон */
+button#closeCommentsModal, button#closeSearchHistoryModal, button#closeUsedHashtagsModal {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button#closeCommentsModal:hover, button#closeSearchHistoryModal:hover, button#closeUsedHashtagsModal:hover {
+    background-color: #e53935;
+}
+
+button#closeCommentsModal:focus, button#closeSearchHistoryModal:focus, button#closeUsedHashtagsModal:focus {
+    outline: none;
+}
+
+/* Стили для кнопок в конце */
+button#viewCommentsBtn, button#viewSearchHistoryBtn , button#viewUsedHashtagsBtn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    margin: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#viewCommentsBtn:hover, button#viewSearchHistoryBtn:hover, button#viewUsedHashtagsBtn:hover {
+    background-color: #1976D2;
+}
+
+button#viewCommentsBtn:focus, button#viewSearchHistoryBtn:focus, button#viewUsedHashtagsBtn:hover {
+    outline: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .stat-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .instructions {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Липнем к левому краю */
+        margin-left: 10px;
+    }
+
+    .instruction {
+        width: 100%;
+        margin-bottom: 20px;
+
+    }
+}
