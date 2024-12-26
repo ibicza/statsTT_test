@@ -21,6 +21,23 @@ jsonFileInput.addEventListener('change', async (event) => {
             return;
         }
 
+        const expectedStart = `{
+  "Activity": {
+    "Favorite Effects": {
+      "FavoriteEffectsList":`;
+
+        try {
+            const isValid = await validateJSONStartSync(file, expectedStart);
+            if (!isValid) {
+                alert("Ошибка: JSON не соответствует ожидаемой начальной структуре!");
+                event.target.value = ''; // Сбросить выбранный файл
+                return;
+            }
+        } catch (error) {
+            console.error(error.message);
+            return;
+        }
+
         // Отображаем прогресс-бар
         progressContainer.style.display = "block";
 
@@ -39,11 +56,21 @@ jsonFileInput.addEventListener('change', async (event) => {
         });
 
         // Обработка завершения загрузки
-        xhr.addEventListener('load', () => {
-            alert('Файл успешно загружен!');
-            progressContainer.style.display = "none";
-            progressInner.style.width = "0%";
-            progressText.textContent = "0%";
+        xhr.addEventListener('load', async () => {
+            if (xhr.status === 200) {
+                progressContainer.style.display = "none";
+                progressInner.style.width = "0%";
+                progressText.textContent = "0%";
+
+                try {
+                    const stats = JSON.parse(xhr.responseText);
+                    displayStats(stats);
+                } catch (error) {
+                    console.error('Ошибка при обработке ответа сервера:', error);
+                }
+            } else {
+                alert(`Ошибка: ${xhr.status} ${xhr.statusText}`);
+            }
         });
 
         // Обработка ошибок
@@ -57,62 +84,6 @@ jsonFileInput.addEventListener('change', async (event) => {
         // Отправка файла на сервер
         xhr.open('POST', 'http://localhost:8080/api/upload');
         xhr.send(formData);
-    }
-});
-
-
-jsonFileInput.addEventListener('change', async (event) => {
-    const file = event.target.files[0];
-    if (file) {
-
-        // Проверка расширения файла
-        const fileExtension = file.name.split('.').pop().toLowerCase();
-        if (fileExtension !== 'json') {
-            alert('Ошибка: можно загружать только файлы с расширением .json');
-            event.target.value = ''; // Сбросить выбранный файл
-            return;
-        }
-
-        const expectedStart = `{
-  "Activity": {
-    "Favorite Effects": {
-      "FavoriteEffectsList":`;
-
-        if (file) {
-            try {
-                const isValid = await validateJSONStartSync(file, expectedStart);
-                if (isValid) {
-                    console.log("JSON валиден по начальной структуре!");
-                } else {
-                    alert("Ошибка: JSON не соответствует ожидаемой начальной структуре!");
-                    event.target.value = ''; // Сбросить выбранный файл
-                    return;
-                }
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
-
-        const formData = new FormData();
-        formData.append('file', file);
-
-        try {
-            const response = await fetch('http://localhost:8080/api/upload', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!response.ok) {
-                console.error(`Ошибка: ${response.status} ${response.statusText}`);
-                alert(`Ошибка: ${response.status} ${response.statusText}`);
-                return; // Выход из функции
-            }
-
-            const stats = await response.json();
-            displayStats(stats);
-        } catch (error) {
-            alert('Error: ' + error.message);
-        }
     }
 });
 
@@ -241,26 +212,11 @@ function displayStats(stats) {
 
     `;
 
-    const animatedStats = [
-        { id: 'stat1', value: stats.countVideosWatched || 0 },
-        { id: 'stat2', value: stats.countVideoLiked || 0 },
-        { id: 'stat3', value: stats.countVideoShared || 0 },
-        { id: 'stat4', value: stats.countFriendsVideosLiked || 0 },
-        { id: 'stat5', value: stats.countComments || 0 },
-        { id: 'stat6', value: stats.countUsedHashtags || 0 },
-        { id: 'stat7', value: stats.countLivesWatched || 0 },
-        { id: 'stat8', value: stats.countLoginHistory || 0 },
-        { id: 'stat10', value: (stats.countVideosWatched * 20 / 60) || 'No data' },
-        { id: 'stat11', value: (stats.countVideosWatched * 20 / 60 / 60) || 'No data' },
-        { id: 'stat11', value: (stats.countVideosWatched * 20 / 60 / 60) || 'No data' }
-    ];
-
     // Назад к главной
     document.getElementById('backButton').addEventListener('click', () => {
         window.location.reload();
     });
 
-    document.getElementById("stat10").textContent = "Матье Бал PL"
 
     // Логика слайдшоу
     const slides = document.querySelectorAll('.stat-card');
@@ -281,6 +237,33 @@ function displayStats(stats) {
 
     document.getElementById("stat10Text").textContent = getText();
     document.getElementById("stat11").textContent = Math.round(stats.countVideosWatched * 20 / 60 / 60 / 24).toFixed();
+
+    const animatedStats = [
+        { id: 'stat1', value: stats.countVideosWatched || 0 },
+        { id: 'stat2', value: stats.countVideoLiked || 0 },
+        { id: 'stat3', value: stats.countVideoShared || 0 },
+        { id: 'stat4', value: stats.countFriendsVideosLiked || 0 },
+        { id: 'stat5', value: stats.countComments || 0 },
+        { id: 'stat6', value: stats.countUsedHashtags || 0 },
+        { id: 'stat7', value: stats.countLivesWatched || 0 },
+        { id: 'stat8', value: stats.countLoginHistory || 0 },
+        { id: 'stat10', value: (stats.countVideosWatched * 20 / 60) || 'No data' },
+        { id: 'stat11', value: (stats.countVideosWatched * 20 / 60 / 60) || 'No data' },
+        { id: 'stat11', value: (stats.countVideosWatched * 20 / 60 / 60) || 'No data' }
+    ];
+
+    const gradients = [
+        'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #67FFBB 0%, #F87272 100%)',
+        'radial-gradient(525.78% 1000.62% at 15.14% 100%, #70A7E1 0%, #F56CDE 50%, #81F872 100%)',
+        'linear-gradient(90deg, rgba(248,114,114,1) 0%',
+        'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #D2FB9A 0%, #72E1F8 100%)',
+        'background: linear-gradient(34deg, rgba(248,230,114,1) 0%, rgba(103,255,225,1) 100%)',
+        'linear-gradient(315deg, rgba(161,82,173,1) 0%, rgba(32,124,154,1) 100%)',
+        'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #FFF767 0%, #F87272 100%)',
+        'linear-gradient(45deg, rgba(249,255,120,1) 0%, rgba(255,123,211,1) 41%, rgba(185,27,228,1) 100%)',
+        'linear-gradient(124deg, rgba(103,255,187,1) 9%, rgba(255,123,211,1) 100%)',
+        'radial-gradient(circle, rgba(210,251,154,1) 0%, rgba(114,225,248,1) 100%)'
+    ];
 
     function getText(){
         const num = stats.countVideosWatched * 20 / 60 / 60 / 24;
@@ -328,7 +311,11 @@ function displayStats(stats) {
         if (currentSlide > 0) {
             slides[currentSlide - 1].classList.remove('active');
         }
+
         slides[currentSlide].classList.add('active');
+
+        document.body.style.background = gradients[currentSlide];
+
         const stat = animatedStats[currentSlide];
         if (stat) {
             animateValue(stat.id, 0, stat.value, 2000);
@@ -340,6 +327,7 @@ function displayStats(stats) {
             document.querySelector('.slideshow').style.display = 'none';
             statsDetails.innerHTML = allStats;
             finalText.style.display = 'block';
+            document.body.style.background = 'radial-gradient(circle, rgba(103,255,187,1) 4%, rgba(116,124,243,1) 63%, rgba(248,114,114,1) 100%)';
         }
     };
 
@@ -388,7 +376,7 @@ function displayStats(stats) {
         const searchUsedHashtagsList = document.getElementById('searchUsedHashtagsList');
 
         // Наполним список истории поиска
-        searchUsedHashtagsList.innerHTML = stats.shearList.map(search => `<p>${search}</p>`).join('');
+        searchUsedHashtagsList.innerHTML = stats.usedHashTags.map(search => `<p>${search}</p>`).join('');
 
         searchUsedHashtagsModal.style.display = 'block';
     });

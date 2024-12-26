@@ -1,47 +1,79 @@
 /* Общие стили для страницы */
 
+html {
+    /*background-image: url("BackFromKristina.png");*/
+    background: linear-gradient(36deg, rgba(185,27,228,1) 2%, rgba(32,124,154,1) 65%, rgba(34,255,26,1) 100%);
+    transition: background 2s ease-in-out;
+    background-attachment: fixed;
+    backdrop-filter: blur(4px)
+
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url("BackFromKristina.png");
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 /* Header */
 .header {
-    background-color: #fff4db;
+    background: #FFFFFF;
     padding: 20px;
-    width: 100%;
+    width: 97.4%;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px 0 #00000026;
+
 }
 
 .header h1 {
-    font-size: 2rem;
-    color: #222;
+    font-family: Konkhmer Sleokchher, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 87px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+    color: #000000;
+
 }
 
 .header p {
-    font-size: 1rem;
-    color: #555;
+
+    font-family: Kodchasan;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+
+    color: #000000;
 }
 
 /* Стиль кнопки загрузки */
 .upload-section {
     margin: 20px;
     text-align: center;
+    background: #1E1E1E;
+    border-radius: 20px;
+    width: 195px;
 }
 
 .upload-section button {
-    background-color: #222;
+    background: #1E1E1E;
+    width: 195px;
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 32px;
+    border-radius: 20px;
     cursor: pointer;
+
 }
 
 .upload-section button:hover {
@@ -49,6 +81,7 @@ body {
 }
 
 #progressContainer {
+    width: 410px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -59,7 +92,7 @@ body {
 #progressOuter {
     width: 250px;
     max-width: 400px;
-    height: 20px;
+    height: 16px;
     background-color: #f3f3f3;
     border-radius: 10px;
     overflow: hidden;
@@ -93,7 +126,7 @@ body {
 .instruction {
     background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
@@ -104,15 +137,43 @@ body {
 .instruction img {
     width: 100%;
     height: auto;
+    border-radius: 25px;
     object-fit: contain;
-    border-radius: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
 }
 
 .instruction p {
-    font-size: 0.9rem;
+
     color: #333;
+    font-family: Kodchasan;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.4px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.footer {
+
+    font-family: Konkhmer Sleokchher;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27.1px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+    width: 303px;
+    height: 27px;
+    top: 965px;
+    left: 569px;
+
+    color: #FFFFFF;
+
+
 }
 
 
@@ -121,8 +182,8 @@ body {
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
-    background-color: #e18a07;
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    border-radius: 25px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -145,12 +206,14 @@ body {
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Kodchasan;
 }
 
 #backButton:hover {
-    background-color: #151868;
+    background-color: rgba(0, 0, 0, 0.48);
 }
 
 .slideshow {
@@ -188,15 +251,18 @@ body {
 
 .stat-card p {
     font-size: 1.2rem;
+    font-family: Kodchasan;
     color: #555;
 }
 
 .stat-card:nth-child(odd) {
-    background: linear-gradient(145deg, #29802d, #f0c45c);
+    background: linear-gradient(145deg, #8ed393, #e8bd57);
+    border: 1px solid rgba(0, 0, 0, 0.73);
 }
 
 .stat-card:nth-child(even) {
     background: linear-gradient(145deg, #5e1a9a, #66ace6);
+    border: 1px solid rgba(0, 0, 0, 0.73);
 }
 
 .stat-card.active {
@@ -207,9 +273,10 @@ body {
 .final-text {
     margin-top: 20px;
     padding: 20px;
-    background-color: #008373;
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000000;
     max-width: 900px;
     width: 95.6%;
     display: flex;
@@ -222,22 +289,38 @@ body {
 }
 
 .final-text h2 {
-    font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
+    font-family: Kodchasan;
+    font-size: 32px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
 
 .final-text p {
-    font-size: 1.1rem;
     color: #555;
     margin: 10px 0;
     word-wrap: break-word;
+    font-family: Kodchasan;
+    font-size: 26px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
 
 .final-text .stats-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-family: Kodchasan;
+    font-size: 26px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
 
 .final-text .stats-list li {
@@ -250,7 +333,6 @@ body {
 }
 
 .final-text button {
-    background-color: #4CAF50;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -261,9 +343,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.final-text button:hover {
-    background-color: #45a049;
-}
+
 
 .final-text button:focus {
     outline: none;
@@ -346,15 +426,21 @@ button#closeCommentsModal:focus, button#closeSearchHistoryModal:focus, button#cl
 
 /* Стили для кнопок в конце */
 button#viewCommentsBtn, button#viewSearchHistoryBtn , button#viewUsedHashtagsBtn {
-    background-color: #2196F3;
+    background: #70A7E1;
     color: white;
     border: none;
     padding: 12px 24px;
-    font-size: 1.1em;
     margin: 10px;
-    border-radius: 6px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: Konkhmer Sleokchher;
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
 
 button#viewCommentsBtn:hover, button#viewSearchHistoryBtn:hover, button#viewUsedHashtagsBtn:hover {
@@ -392,4 +478,18 @@ button#viewCommentsBtn:focus, button#viewSearchHistoryBtn:focus, button#viewUsed
         margin-bottom: 20px;
 
     }
+}
+
+@font-face {
+    font-family: 'Konkhmer Sleokchher Regular';
+    font-style: normal;
+    font-weight: normal;
+    src:url('fonts/KonkhmerSleokchher-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Kodchasan';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/KodchasanRegular400.ttf') format('ttf');
 }
