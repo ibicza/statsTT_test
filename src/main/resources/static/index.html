@@ -14,7 +14,7 @@
     <p>Upload your JSON file to get personalized insights into your activity!</p>
 </div>
 
-<div class="upload-section">
+<div class="upload-section" id="upload-section">
     <!-- Обёртка для кнопки загрузки и файла -->
     <input type="file" id="jsonFileInput" accept="application/json" style="display: none;">
     <button id="uploadButton">START</button>
@@ -22,8 +22,8 @@
 
 <!-- Кастомный прогресс-бар -->
 <div id="progressContainer" style="display: none; margin-top: 20px;">
-    <div id="progressOuter" style="width: 100%; background-color: #e0e0e0; border-radius: 5px; overflow: hidden;">
-        <div id="progressInner" style="width: 0; height: 20px; background-color: #76c7c0;"></div>
+    <div id="progressOuter" style="width: 100%; overflow: hidden;">
+        <div id="progressInner" style="width: 0; height: 20px; "></div>
     </div>
     <span id="progressText">0%</span>
 </div>

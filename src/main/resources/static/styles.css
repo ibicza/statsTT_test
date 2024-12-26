@@ -2,11 +2,10 @@
 
 html {
     /*background-image: url("BackFromKristina.png");*/
-    background: linear-gradient(36deg, rgba(185,27,228,1) 2%, rgba(32,124,154,1) 65%, rgba(34,255,26,1) 100%);
-    transition: background 2s ease-in-out;
-    background-attachment: fixed;
-    backdrop-filter: blur(4px)
-
+    /*background-attachment: fixed;*/
+    backdrop-filter: blur(4px);
+    overflow-x: hidden;
+    background: #1E1E1E;
 }
 
 body {
@@ -17,8 +16,11 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    background-image: linear-gradient(36deg, rgba(185,27,228,1) 2%, rgba(32,124,154,1) 65%, rgba(34,255,26,1) 100%);
 }
-/* Header */
+
+
+    /* Header */
 .header {
     background: #FFFFFF;
     padding: 20px;
@@ -57,7 +59,8 @@ body {
 
 /* Стиль кнопки загрузки */
 .upload-section {
-    margin: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
     background: #1E1E1E;
     border-radius: 20px;
@@ -86,24 +89,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 0; /* Убираем разрыв между элементами */
+    margin-top: 0; /* Убираем дополнительный верхний отступ */
+    position: relative; /* Если нужно будет сдвигать через top */
 }
 
 #progressOuter {
     width: 250px;
     max-width: 400px;
     height: 16px;
-    background-color: #f3f3f3;
-    border-radius: 10px;
+    border-radius: 25px;
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 1px solid #FFFFFF;
     position: relative;
+    box-shadow: 0 4px 4px 0 #00000026;
+    margin-top: -10px; /* Делаем ближе к кнопке */
+
 }
 
 #progressInner {
     height: 100%;
     width: 0;
-    background: linear-gradient(90deg, #4caf50, #2196f3);
+    background: #FFFFFF;
     transition: width 0.3s ease;
 }
 
@@ -186,6 +193,7 @@ body {
     border-radius: 25px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .stats-header {
@@ -226,6 +234,7 @@ body {
 }
 
 .stat-card {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -271,14 +280,15 @@ body {
 }
 
 .final-text {
+    box-sizing: border-box;
     margin-top: 20px;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     background-color: #FFFFFF;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid #000000;
     max-width: 900px;
-    width: 95.6%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -290,7 +300,6 @@ body {
 
 .final-text h2 {
     color: #333;
-    margin-bottom: 10px;
     font-family: Kodchasan;
     font-size: 32px;
     text-align: center;
@@ -461,22 +470,38 @@ button#viewCommentsBtn:focus, button#viewSearchHistoryBtn:focus, button#viewUsed
 }
 /* Мобильная адаптация */
 @media (max-width: 768px) {
+
+    #progressContainer {
+        width: 250px;
+    }
+
+    .stats-page {
+        margin-left: auto;
+        margin-right: auto
+    }
+    .final-text{
+        margin-left: auto;
+        margin-right: auto
+    }
+
     .stat-card {
         width: 90%;
-        padding: 20px;
+        margin-left: auto;
+        margin-right: auto
     }
 
     .instructions {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start; /* Липнем к левому краю */
-        margin-left: 10px;
+        margin-left: auto;
+        margin-right: auto
     }
 
     .instruction {
         width: 100%;
-        margin-bottom: 20px;
-
+        margin-left: auto;
+        margin-right: auto
     }
 }
 

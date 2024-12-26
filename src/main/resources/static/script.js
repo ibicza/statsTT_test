@@ -37,9 +37,10 @@ jsonFileInput.addEventListener('change', async (event) => {
             console.error(error.message);
             return;
         }
-
+        document.getElementById("upload-section").style.marginBottom = '5px';
         // Отображаем прогресс-бар
         progressContainer.style.display = "block";
+
 
         const formData = new FormData();
         formData.append('file', file);
@@ -82,7 +83,7 @@ jsonFileInput.addEventListener('change', async (event) => {
         });
 
         // Отправка файла на сервер
-        xhr.open('POST', 'http://localhost:8080/api/upload');
+        xhr.open('POST', 'https://e528-178-120-0-103.ngrok-free.app/api/upload');
         xhr.send(formData);
     }
 });
@@ -179,7 +180,7 @@ function displayStats(stats) {
             <ul class="stats-list" id="statsDetails"></ul>
             <button id="viewCommentsBtn">View Comments</button>
             <button id="viewSearchHistoryBtn">View Search History</button>
-            <button id="viewUsedHashtagsBtn">View Used Hashtags</button>
+            <button id="viewUsedHashtagsBtn">View Hashtags</button>
         </div>
     </div>
     
@@ -204,7 +205,7 @@ function displayStats(stats) {
     <!-- Всплывающее окно для истории хэштэгов -->
     <div id="searchUsedHashtagsModal" class="modal" style="display: none;">
         <div class="modal-content">
-            <h3>Search History</h3>
+            <h3>Hashtags</h3>
             <div id="searchUsedHashtagsList" class="scrollable-list"></div>
             <button id="closeUsedHashtagsModal">Close</button>
         </div>
@@ -257,7 +258,7 @@ function displayStats(stats) {
         'radial-gradient(525.78% 1000.62% at 15.14% 100%, #70A7E1 0%, #F56CDE 50%, #81F872 100%)',
         'linear-gradient(90deg, rgba(248,114,114,1) 0%',
         'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #D2FB9A 0%, #72E1F8 100%)',
-        'background: linear-gradient(34deg, rgba(248,230,114,1) 0%, rgba(103,255,225,1) 100%)',
+        'linear-gradient(34deg, rgba(248,230,114,1) 0%, rgba(103,255,225,1) 100%)',
         'linear-gradient(315deg, rgba(161,82,173,1) 0%, rgba(32,124,154,1) 100%)',
         'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #FFF767 0%, #F87272 100%)',
         'linear-gradient(45deg, rgba(249,255,120,1) 0%, rgba(255,123,211,1) 41%, rgba(185,27,228,1) 100%)',
@@ -314,7 +315,7 @@ function displayStats(stats) {
 
         slides[currentSlide].classList.add('active');
 
-        document.body.style.background = gradients[currentSlide];
+        document.body.style.backgroundImage  = gradients[currentSlide];
 
         const stat = animatedStats[currentSlide];
         if (stat) {
@@ -327,7 +328,7 @@ function displayStats(stats) {
             document.querySelector('.slideshow').style.display = 'none';
             statsDetails.innerHTML = allStats;
             finalText.style.display = 'block';
-            document.body.style.background = 'radial-gradient(circle, rgba(103,255,187,1) 4%, rgba(116,124,243,1) 63%, rgba(248,114,114,1) 100%)';
+            document.body.style.backgroundImage  = 'radial-gradient(circle, rgba(103,255,187,1) 4%, rgba(116,124,243,1) 63%, rgba(248,114,114,1) 100%)';
         }
     };
 
