@@ -118,99 +118,105 @@ function displayStats(stats) {
 
     // Вставить новую страницу со слайдами
     document.body.innerHTML = `
-    <div class="stats-page">
-        <div class="stats-header">
-            <h2>${stats.username}'s Personalized Stats</h2>
-            <button id="backButton">Back</button>
+    <div class="background-overlay background-overlay-1"></div>
+    <div class="background-overlay background-overlay-2"></div>
+    <div class="content">
+        <div class="header">
+        <h1>Your Time on TikTok</h1>
+        <p>!Text TEXT texT!</p>
         </div>
-        <div id="slideshow" class="slideshow">
-            <div class="stat-card" id="slide1">
-                <h3>Video watched</h3>
-                <p id="stat1">0</p>
+        <div class="stats-page">
+            <div class="stats-header">
+                <h2>${stats.username}'s Personalized Stats</h2>
+                <button id="backButton">Back</button>
             </div>
-            <div class="stat-card" id="slide2">
-                <h3>Video Liked</h3>
-                <p id="stat2">0</p>
+            <div id="slideshow" class="slideshow">
+                <div class="stat-card" id="slide1">
+                    <h3>Video watched</h3>
+                    <p id="stat1">0</p>
+                </div>
+                <div class="stat-card" id="slide2">
+                    <h3>Video Liked</h3>
+                    <p id="stat2">0</p>
+                </div>
+                <div class="stat-card" id="slide3">
+                    <h3>Video Shared</h3>
+                    <p id="stat3">0</p>
+                </div>
+                <div class="stat-card" id="slide4">
+                    <h3>Friends' Videos Liked</h3>
+                    <p id="stat4">0</p>
+                </div>
+                <div class="stat-card" id="slide5">
+                    <h3>Comments</h3>
+                    <p id="stat5">0</p>
+                </div>
+                <div class="stat-card" id="slide6">
+                    <h3>Used Hashtags</h3>
+                    <p id="stat6">0</p>
+                </div>
+                <div class="stat-card" id="slide7">
+                    <h3>Lives Watched</h3>
+                    <p id="stat7">0</p>
+                </div>
+                <div class="stat-card" id="slide8">
+                    <h3>Login History</h3>
+                    <p id="stat8">0</p>
+                </div>
+                <div class="stat-card" id="slide9">
+                    <h3>Total spent time in minutes</h3>
+                    <p id="stat9">0</p>
+                </div>
+                <div class="stat-card" id="slide10">
+                    <h3>Total spent time in hours</h3>
+                    <p id="stat10">0</p>
+                    <p id="stat10Text">It's too long time...</p>
+                </div>
+                <div class="stat-card" id="slide11">
+                    <h3>Most Used Emojis</h3>
+                    <p id="stat11">${stats.mostUsedEmojis}</p>
+                </div>
             </div>
-            <div class="stat-card" id="slide3">
-                <h3>Video Shared</h3>
-                <p id="stat3">0</p>
+            <div class="final-text" id="finalText" style="display: none;">
+                <h2>Here are your detailed stats, we hope you find them interesting!</h2>
+                <ul class="stats-list" id="statsDetails"></ul>
+                <button id="viewCommentsBtn">View Comments</button>
+                <button id="viewSearchHistoryBtn">View Search History</button>
+                <button id="viewUsedHashtagsBtn">View Hashtags</button>
             </div>
-            <div class="stat-card" id="slide4">
-                <h3>Friends' Videos Liked</h3>
-                <p id="stat4">0</p>
-            </div>
-            <div class="stat-card" id="slide5">
+        </div>
+        
+            <!-- Всплывающее окно для комментариев -->
+        <div id="commentsModal" class="modal" style="display: none;">
+            <div class="modal-content">
                 <h3>Comments</h3>
-                <p id="stat5">0</p>
-            </div>
-            <div class="stat-card" id="slide6">
-                <h3>Used Hashtags</h3>
-                <p id="stat6">0</p>
-            </div>
-            <div class="stat-card" id="slide7">
-                <h3>Lives Watched</h3>
-                <p id="stat7">0</p>
-            </div>
-            <div class="stat-card" id="slide8">
-                <h3>Login History</h3>
-                <p id="stat8">0</p>
-            </div>
-            <div class="stat-card" id="slide9">
-                <h3>Most Used Emojis</h3>
-                <p id="stat9">${stats.mostUsedEmojis}</p>
-            </div>
-            <div class="stat-card" id="slide10">
-                <h3>Total spent time in minutes</h3>
-                <p id="stat10">No data</p>
-            </div>
-            <div class="stat-card" id="slide11">
-                <h3>Total spent time in hours</h3>
-                <p id="stat11">one</p>
-                <p id="stat10Text">It's too long time...</p>
-            </div>
-            <div class="stat-card" id="slide11">
-                <h3>Total spent time in hours</h3>
-                <p id="stat12">two</p>
-                <p id="stat10Text">It's too long time...</p>
+                <div id="commentsList" class="scrollable-list"></div>
+                <button id="closeCommentsModal">Close</button>
             </div>
         </div>
-        <div class="final-text" id="finalText" style="display: none;">
-            <h2>Here are your detailed stats, we hope you find them interesting!</h2>
-            <ul class="stats-list" id="statsDetails"></ul>
-            <button id="viewCommentsBtn">View Comments</button>
-            <button id="viewSearchHistoryBtn">View Search History</button>
-            <button id="viewUsedHashtagsBtn">View Hashtags</button>
+    
+        <!-- Всплывающее окно для истории поиска -->
+        <div id="searchHistoryModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Search History</h3>
+                <div id="searchHistoryList" class="scrollable-list"></div>
+                <button id="closeSearchHistoryModal">Close</button>
+            </div>
         </div>
+        
+        <!-- Всплывающее окно для истории хэштэгов -->
+        <div id="searchUsedHashtagsModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Hashtags</h3>
+                <div id="searchUsedHashtagsList" class="scrollable-list"></div>
+                <button id="closeUsedHashtagsModal">Close</button>
+            </div>
+        </div>
+        <footer class = "footer">
+        <p id="footer">&copy; 2024 Ibicza\`s App. All rights reserved.</p>
+        </footer>
     </div>
     
-        <!-- Всплывающее окно для комментариев -->
-    <div id="commentsModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <h3>Comments</h3>
-            <div id="commentsList" class="scrollable-list"></div>
-            <button id="closeCommentsModal">Close</button>
-        </div>
-    </div>
-
-    <!-- Всплывающее окно для истории поиска -->
-    <div id="searchHistoryModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <h3>Search History</h3>
-            <div id="searchHistoryList" class="scrollable-list"></div>
-            <button id="closeSearchHistoryModal">Close</button>
-        </div>
-    </div>
-    
-    <!-- Всплывающее окно для истории хэштэгов -->
-    <div id="searchUsedHashtagsModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <h3>Hashtags</h3>
-            <div id="searchUsedHashtagsList" class="scrollable-list"></div>
-            <button id="closeUsedHashtagsModal">Close</button>
-        </div>
-    </div>
-
     `;
 
     // Назад к главной
@@ -237,7 +243,6 @@ function displayStats(stats) {
     `;
 
     document.getElementById("stat10Text").textContent = getText();
-    document.getElementById("stat11").textContent = Math.round(stats.countVideosWatched * 20 / 60 / 60 / 24).toFixed();
 
     const animatedStats = [
         { id: 'stat1', value: stats.countVideosWatched || 0 },
@@ -248,22 +253,24 @@ function displayStats(stats) {
         { id: 'stat6', value: stats.countUsedHashtags || 0 },
         { id: 'stat7', value: stats.countLivesWatched || 0 },
         { id: 'stat8', value: stats.countLoginHistory || 0 },
-        { id: 'stat10', value: (stats.countVideosWatched * 20 / 60) || 'No data' },
-        { id: 'stat11', value: (stats.countVideosWatched * 20 / 60 / 60) || 'No data' },
-        { id: 'stat11', value: (stats.countVideosWatched * 20 / 60 / 60) || 'No data' }
+        { id: 'stat9', value: Math.round(stats.countVideosWatched * 20 / 60).toFixed() || '0' },
+        { id: 'stat10', value: Math.round(stats.countVideosWatched * 20 / 60 / 60).toFixed() || '0' }
     ];
 
+    //2одинаковых фона ибо не был отрисован фон под stat10
     const gradients = [
-        'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #67FFBB 0%, #F87272 100%)',
-        'radial-gradient(525.78% 1000.62% at 15.14% 100%, #70A7E1 0%, #F56CDE 50%, #81F872 100%)',
-        'linear-gradient(90deg, rgba(248,114,114,1) 0%',
-        'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #D2FB9A 0%, #72E1F8 100%)',
-        'linear-gradient(34deg, rgba(248,230,114,1) 0%, rgba(103,255,225,1) 100%)',
-        'linear-gradient(315deg, rgba(161,82,173,1) 0%, rgba(32,124,154,1) 100%)',
-        'radial-gradient(63.19% 175.14% at 72.43% 83.79%, #FFF767 0%, #F87272 100%)',
-        'linear-gradient(45deg, rgba(249,255,120,1) 0%, rgba(255,123,211,1) 41%, rgba(185,27,228,1) 100%)',
-        'linear-gradient(124deg, rgba(103,255,187,1) 9%, rgba(255,123,211,1) 100%)',
-        'radial-gradient(circle, rgba(210,251,154,1) 0%, rgba(114,225,248,1) 100%)'
+        'backgrounds/StartPage.svg',
+        'backgrounds/VideoWatched.svg',
+        'backgrounds/VideoLiked.svg',
+        'backgrounds/VideoShared.svg',
+        'backgrounds/FriendsVideoLiked.svg',
+        'backgrounds/Comments.svg',
+        'backgrounds/UsedHashtags.png',
+        'backgrounds/LivesWatched.svg',
+        'backgrounds/LoginHistory.svg',
+        'backgrounds/TotalTimeSpent.svg',
+        'backgrounds/FriendsVideoLiked.svg',
+        'backgrounds/MostUsedEmojis.svg',
     ];
 
     function getText(){
@@ -307,6 +314,26 @@ function displayStats(stats) {
 
 
     let currentSlide = 0;
+    let currentBackground = 0; // Отслеживаем текущий фон
+    const background1 = document.querySelector('.background-overlay-1');
+    const background2 = document.querySelector('.background-overlay-2');
+
+    const changeBackground = (newImage) => {
+        const current = currentBackground === 1 ? background1 : background2;
+        const next = currentBackground === 1 ? background2 : background1;
+
+        // Устанавливаем новый фон для следующего слоя
+        next.style.backgroundImage = `url("${newImage}")`;
+
+        // Плавно показываем новый фон
+        next.style.opacity = 1;
+
+        // Прячем текущий фон
+        current.style.opacity = 0;
+
+        // Переключаем текущий фон
+        currentBackground = currentBackground === 1 ? 2 : 1;
+    };
 
     const changeSlide = () => {
         if (currentSlide > 0) {
@@ -315,12 +342,18 @@ function displayStats(stats) {
 
         slides[currentSlide].classList.add('active');
 
-        document.body.style.backgroundImage  = gradients[currentSlide];
+        // Синхронизируем смену фона и слайда
+        requestAnimationFrame(() => {
+            // Меняем фон с плавной анимацией
+            changeBackground(gradients[currentSlide]);
+        });
+
 
         const stat = animatedStats[currentSlide];
         if (stat) {
             animateValue(stat.id, 0, stat.value, 2000);
         }
+
         currentSlide++;
 
         if (currentSlide >= slides.length) {
@@ -328,7 +361,8 @@ function displayStats(stats) {
             document.querySelector('.slideshow').style.display = 'none';
             statsDetails.innerHTML = allStats;
             finalText.style.display = 'block';
-            document.body.style.backgroundImage  = 'radial-gradient(circle, rgba(103,255,187,1) 4%, rgba(116,124,243,1) 63%, rgba(248,114,114,1) 100%)';
+            // Финальный фон
+            changeBackground('backgrounds/TotalStats.svg');
         }
     };
 
@@ -346,7 +380,6 @@ function displayStats(stats) {
         window.requestAnimationFrame(step);
     }
 
-    slides[0].classList.add('active');
     const slideshowInterval = setInterval(changeSlide, 6000);
 
     // Открытие модального окна с комментариями

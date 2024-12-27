@@ -1,11 +1,10 @@
 /* Общие стили для страницы */
 
-html {
-    /*background-image: url("BackFromKristina.png");*/
-    /*background-attachment: fixed;*/
-    backdrop-filter: blur(4px);
-    overflow-x: hidden;
-    background: #1E1E1E;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -16,18 +15,64 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(36deg, rgba(185,27,228,1) 2%, rgba(32,124,154,1) 65%, rgba(34,255,26,1) 100%);
+    position: relative;
+    overflow-x:hidden;
+    justify-content: center; /* Если нужно центрировать содержимое */
+    box-sizing: border-box; /* Для учета паддингов */
+    width: 100%;
 }
 
 
-    /* Header */
+.background-overlay {
+    position: fixed; /* Зафиксируйте относительно окна браузера */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+
+.background-overlay-1 {
+    background-image: url("backgrounds/StartPage.png"); /* Начальный фон */
+    opacity: 1; /* Начальный фон видим */
+}
+
+.background-overlay-2 {
+    background-image: url("backgrounds/VideoWatched.svg"); /* Начальный фон */
+    opacity: 0; /* Второй фон невидим */
+}
+
+.content {
+    width: 100%; /* Ширина занимает доступное пространство */
+    position: relative;
+    z-index: 1; /* Устанавливаем поверх фона */
+    box-sizing: border-box; /* Учитываем padding в ширине */
+    display: flex;
+    flex-direction: column; /* Расположение содержимого вертикально */
+    justify-content: flex-start; /* Начинает с верхней части */
+    min-height: 100vh; /* Минимальная высота равна высоте экрана */
+}
+
+
+
+/* Header */
 .header {
     background: #FFFFFF;
     padding: 20px;
-    width: 97.4%;
+    width: 100%;
     text-align: center;
     box-shadow: 0 4px 4px 0 #00000026;
-
+    border-radius: 0 0 25px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    z-index: 3;
 }
 
 .header h1 {
@@ -59,12 +104,11 @@ body {
 
 /* Стиль кнопки загрузки */
 .upload-section {
-    margin-top: 50px;
-    margin-bottom: 50px;
     text-align: center;
     background: #1E1E1E;
     border-radius: 20px;
     width: 195px;
+    margin: 25px auto 50px auto;
 }
 
 .upload-section button {
@@ -92,6 +136,9 @@ body {
     gap: 0; /* Убираем разрыв между элементами */
     margin-top: 0; /* Убираем дополнительный верхний отступ */
     position: relative; /* Если нужно будет сдвигать через top */
+    margin-left: auto;
+    margin-right: auto
+
 }
 
 #progressOuter {
@@ -120,14 +167,17 @@ body {
 }
 
 
+
+
 .instructions {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 90%;
     max-width: 1200px;
-    margin: 0;
     box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .instruction {
@@ -139,6 +189,7 @@ body {
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
+    margin-top: 10px;
 }
 
 .instruction img {
@@ -168,15 +219,17 @@ body {
     font-family: Konkhmer Sleokchher;
     font-size: 15px;
     font-weight: 400;
-    line-height: 27.1px;
+    line-height: 27px;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    box-sizing: border-box;
+    display: flex;
 
-    width: 303px;
-    height: 27px;
-    top: 965px;
-    left: 569px;
+    margin-left: auto;
+    margin-right: auto;
+
+
 
     color: #FFFFFF;
 
@@ -188,12 +241,14 @@ body {
 .stats-page {
     width: 100%;
     max-width: 900px;
-    margin: 20px auto;
+    /*min-height: 400px; чутка хуйня(если да то секс на слайдах, но пиздец на final-text и наоборот)*/
+    margin: -3px auto;
     background-color: #FFFFFF;
-    border-radius: 25px;
+    border-radius: 0 0 25px 25px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+    z-index: 2;
 }
 
 .stats-header {
@@ -225,16 +280,16 @@ body {
 }
 
 .slideshow {
+    align-items: center;
     position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 200px; /* Высота карточки фиксирована */
+    min-height: 200px; /* Минимальная высота */
+    height: auto; /* Высота будет адаптироваться к контенту */
     border-radius: 15px;
     overflow: hidden;
 }
 
 .stat-card {
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -247,8 +302,7 @@ body {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.5);
     text-align: center;
     opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 1s ease;
 }
 
 .stat-card h3 {
@@ -265,18 +319,17 @@ body {
 }
 
 .stat-card:nth-child(odd) {
-    background: linear-gradient(145deg, #8ed393, #e8bd57);
+    background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.73);
 }
 
 .stat-card:nth-child(even) {
-    background: linear-gradient(145deg, #5e1a9a, #66ace6);
+    background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.73);
 }
 
 .stat-card.active {
     opacity: 1;
-    transform: translateX(0);
 }
 
 .final-text {
@@ -296,6 +349,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     animation: fadeIn 1s ease-in-out;
+    z-index: 2;
 }
 
 .final-text h2 {
@@ -516,5 +570,5 @@ button#viewCommentsBtn:focus, button#viewSearchHistoryBtn:focus, button#viewUsed
     font-family: 'Kodchasan';
     font-style: normal;
     font-weight: normal;
-    src: url('fonts/KodchasanRegular400.ttf') format('ttf');
+    src: url('fonts/KodchasanRegular400.ttf') format('truetype');
 }
