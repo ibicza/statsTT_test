@@ -241,7 +241,6 @@ body {
 .stats-page {
     width: 100%;
     max-width: 900px;
-    /*min-height: 400px; чутка хуйня(если да то секс на слайдах, но пиздец на final-text и наоборот)*/
     margin: -3px auto;
     background-color: #FFFFFF;
     border-radius: 0 0 25px 25px;
@@ -423,6 +422,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .modal-content {
@@ -497,7 +497,7 @@ button#viewCommentsBtn, button#viewSearchHistoryBtn , button#viewUsedHashtagsBtn
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: Konkhmer Sleokchher;
+    font-family: Kodchasan;
     font-size: 26px;
     font-weight: 400;
     text-align: center;
@@ -523,25 +523,125 @@ button#viewCommentsBtn:focus, button#viewSearchHistoryBtn:focus, button#viewUsed
     }
 }
 /* Мобильная адаптация */
-@media (max-width: 768px) {
+@media (max-width: 440px) {
 
     #progressContainer {
         width: 250px;
     }
 
     .stats-page {
+        background-color: rgba(255, 255, 255, 0.63);
+        border-radius: 25px;
         margin-left: auto;
-        margin-right: auto
-    }
-    .final-text{
-        margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+        height: 533px;
+        width: 324px;
+        margin-top: 62px;
     }
 
-    .stat-card {
-        width: 90%;
+    .stats-header {
+        height: 74px;
+        width: 238px;
+        align-items: center;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+    }
+
+    .stats-header h2 {
+        width: 251px;
+        height: 60px;
+        font-size: 24px;
+        margin-top: 44px;
+        text-align: center;
+
+    }
+
+    .slideshow {
+        height: 305px;
+        width: 250px;
+        opacity: 1;
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-card, .stat-card:nth-child(odd), .stat-card:nth-child(even) , .stat-card.active  {
+        border: none;
+        box-shadow:
+                0px 4px 4px rgba(0, 0, 0, 0.25),
+                    /* Внутренняя тень (Inner shadow) */
+                inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .stats-list{
+        width: 323px;
+        height: 335px;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        font-size: 20px;
+    }
+
+    .final-text .stats-list li {
+        font-weight: 400;
+        font-size: 19px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 5px;
+    }
+
+    .final-text {
+        width: 323px;
+        height: 683px;
+        padding: 0;
+        margin-top: 0;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;  /* Центрируем контейнер по горизонтали */
+    }
+
+    .final-text h2 {
+        width: 323px;
+        height: 212px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    /* Для комментариев и хештегов, они будут на одной строке */
+    .button-row {
+        display: flex;
+        justify-content: center;  /* Выравниваем кнопки по центру */
+        width: 100%;
+    }
+
+    /* Для "View Search History" */
+    .final-text button#viewSearchHistoryBtn {
+        width: 174px;
+        height: 50px;
+        font-size: 16px;
+        padding: 0;
+        margin-left: 74px;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .final-text button#viewCommentsBtn {
+        width: 142px;
+        height: 50px;
+        font-size: 16px;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .final-text button#viewUsedHashtagsBtn {
+        width: 139px;
+        height: 50px;
+        font-size: 16px;
+        padding: 0;
+        margin-top: 10px;
     }
 
     .instructions {
@@ -556,6 +656,10 @@ button#viewCommentsBtn:focus, button#viewSearchHistoryBtn:focus, button#viewUsed
         width: 100%;
         margin-left: auto;
         margin-right: auto
+    }
+
+    .footer {
+        margin-top: auto;
     }
 }
 
